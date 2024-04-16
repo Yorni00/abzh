@@ -1,0 +1,68 @@
+
+header {
+    background-color: darkslategray;
+}
+aside {
+    background-color: white;
+    flex: 2;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+} 
+a:visited {
+    color: black;
+}
+main {
+    background-color: darkgray;
+    flex: 5;
+}
+.Main {
+    flex: 1;
+    display: flex;
+}
+.Links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.Links a, a:visited {
+    text-decoration: none;
+    font-size: 200%;
+    margin-right: 15px;
+}
+.card {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 3px solid gray;
+    width: 200px;
+    height: 400px;
+    background-color: rgb(211, 211, 211);
+    border-radius: 10px;
+}
+.cardi {
+    border-radius: 10px;
+    margin-top: 5PX;
+    position: sticky;
+    width: 95%;
+    height: 25%;
+}
+.cardt {
+    margin-top: 1pxs;
+}
+.boxer {
+    display: inline;
+}
+footer{
+    background-color: darkslategray;
+}

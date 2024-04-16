@@ -1,0 +1,41 @@
+#calculator {
+    justify-content: center;
+    width: 250px;
+    margin: 50px auto;
+    border: 6px solid rgb(0, 0, 0);
+    background-color: darkslategray;
+}
+
+#display {
+    height: 20px;
+    width: 240px;
+    margin-bottom: 1px;
+    margin-right: 3px;
+    font-size: 20px;
+    text-align: right;
+    background-color: darkgray;
+}
+
+#buttons {
+    display: flex;
+    gap: 1px;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.btn {
+    font-size: 18px;
+    cursor: pointer;
+    flex: 1 0 20%;
+    background-color: darkslategray;
+}
+
+#equals {
+    flex: 1;
+    background-color: darkgray;
+}
+
+h1 {
+    margin: 50px auto;
+    text-align: center;
+}
