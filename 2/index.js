@@ -26,11 +26,16 @@ r = result
 function hide(el)
 {
     el.classList.add('hide')
-    console.log(el.classList + " was hided")
+    console.log(el + " was hidden")
 }
 function show(el)
 {
     el.classList.remove('hide')
+    console.log(el + " was shown")
+}
+function randi(from, to)
+{
+    return Math.floor(Math.random() * (to - from + 1) + from)
 }
 
 //listeners
@@ -71,4 +76,19 @@ function SetTime()
 function GameClick()
 {
 
+}
+function RenderBox()
+{
+    //clear game area
+    gw.innerHTML = ''
+    //create objets
+    let box = d.createElement('div')
+    let size = 100
+    let areaSize = gw.getBoundingClientRect()
+    let maxTop = areaSize.height - size
+    let maxLeft = areaSize.width - size
+
+    box.style.height = box.style.width = size + 'px'
+    box.style.position = 'absolute'
+    box.style.left = null
 }
