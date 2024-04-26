@@ -42,7 +42,7 @@ main {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 10px;
     border: 3px solid gray;
     width: 200px;
@@ -65,4 +65,7 @@ main {
 }
 footer{
     background-color: darkslategray;
+}
+.hide {
+    display: none;
 }
