@@ -4,11 +4,12 @@ let d = document
 //html objects
 let start_button = d.getElementById('start')
 let game_window = d.getElementById('game')
-let timer_header = d.getElementById('timer-header')
+let timer_header = d.getElementById('time-header')
 let time = d.getElementById('time')
 let time_input = d.getElementById('game-time')
 let result_header = d.getElementById('result-header')
 let result = d.getElementById('result')
+
 
 //game vars
 let score = 0
@@ -53,6 +54,8 @@ function Start()
     SetTime()
 
     hide(sb)
+    show(th)
+    hide(rh)
 
     let inter = setInterval(function(){
         let time = parseFloat(t.textContent)
@@ -66,8 +69,11 @@ function Start()
             show(sb)
             is_game_started = false
             clearInterval(inter)
+            EndGame()
         }
     }, 100)
+
+    RenderBox()
 }
 function SetTime()
 {
@@ -75,6 +81,12 @@ function SetTime()
 }
 function GameClick()
 {
+    if (!is_game_started){return}
+    if (event.target.dataset.box)
+    {
+        score++
+        RenderBox()
+    }
 
 }
 function RenderBox()
@@ -83,12 +95,30 @@ function RenderBox()
     gw.innerHTML = ''
     //create objets
     let box = d.createElement('div')
-    let size = 100
+    let size = randi(10, 100)
     let areaSize = gw.getBoundingClientRect()
     let maxTop = areaSize.height - size
     let maxLeft = areaSize.width - size
 
     box.style.height = box.style.width = size + 'px'
     box.style.position = 'absolute'
-    box.style.left = null
+    box.style.left = randi(0, maxLeft) + 'px'
+    box.style.top = randi(0, maxTop) + 'px'
+    box.style.backgroundColor = `rgb(${randi(0,255)},${randi(0,255)},${randi(0,255)})`
+    /*'rgb(' + randi(0,255) + ',' + randi(0,255) + ',' + randi(0,255) + ')'*/
+
+    box.setAttribute('data-box','true')
+    box.setAttribute('id','box');
+    box.style.borderRadius = randi(0, 25) + 'px'
+
+    game_window.insertAdjacentElement('afterbegin', box)
+}
+function EndGame()
+{
+    console.log('Game ended')
+    let _box = d.getElementById('box')
+    hide(timer_header)
+    show(result_header)
+    hide(_box)
+    rh.textContent = 'Ваш результат: ' + score
 }
