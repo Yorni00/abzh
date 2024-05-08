@@ -28,6 +28,8 @@ body {
 .app__header {
   padding: 20px;
   text-align: center;
+  display: inline-flex;
+  margin-left: 25%;
 }
 
 .app__content {
@@ -138,4 +140,19 @@ body {
 .color-white {
   color: #fff;
   background-color: #fff;
+}
+
+#settings-button {
+  margin-left: 3%;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.settings-menu {
+  text-align: center;
+  background-color: darkgray;
+  margin-left: 23.25%;
+  margin-right: 23.25%;
+  outline: 3px solid rgb(88, 88, 88);
+  outline-offset: -2px;
 }
