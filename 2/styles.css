@@ -28,6 +28,8 @@ body {
 .app__header {
   padding: 20px;
   text-align: center;
+  display: inline-flex;
+  margin-left: 25%;
 }
 
 .app__content {
@@ -138,4 +140,10 @@ body {
 .color-white {
   color: #fff;
   background-color: #fff;
+}
+
+#settings-button {
+  margin-left: 3%;
+  max-height: 50px;
+  max-width: 50px;
 }
